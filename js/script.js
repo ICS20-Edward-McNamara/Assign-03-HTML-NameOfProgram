@@ -15,11 +15,14 @@ function calculate() {
   let length = parseFloat(document.getElementById('length').value)
 
 
-  // calculating volume using formula (Note: I was unable to get math.pi working properly)
-  // const pi = 3.141592653589793238
-  let volume = (4.0/3.0) * Math.PI * radius**3
+  // calculating volume using formula Volume = π × Radius² × Height
+  let volume = Math.PI * (radius**2) * height
+  
+  // calculating surface area using formula 2π × Radius × Length + 2π × Radius2 
+  let surfaceArea = 2*(Math.PI) * radius * length + 2*(Math.PI) * radius**3
 
 
   // Displaying volume results  
-  document.getElementById('volume').innerHTML = 'The volume of the circle is ' + volume.toFixed(2) + 'cm<sup>3</sup>'
-  
+  document.getElementById('volume').innerHTML = 'The volume of the oblique cylinder is ' + volume.toFixed(2) + 'cm<sup>3</sup>'
+  document.getElementById('surfaceArea').innerHTML = 'The surface area of the oblique cylinder is ' + surfaceArea.toFixed(2) + 'cm<sup>2</sup>'
+}
